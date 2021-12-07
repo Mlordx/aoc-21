@@ -17,7 +17,7 @@ def answer1():
     for crab in crabs:
         total_fuel += abs(crab-median)
 
-    return int(total_fuel)
+    return total_fuel
 
 print(answer1())
 

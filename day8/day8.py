@@ -22,8 +22,6 @@ def answer2():
     outputs = []
     with open('input.txt', 'r') as file:
         for line in file:
-            signal_to_number = {}
-            current_display = [ 'x' for i in range(8)]
             inputs = line.split('|')[0].split()
             output = line.split('|')[1].split()
 

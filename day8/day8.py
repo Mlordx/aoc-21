@@ -10,7 +10,7 @@ def answer1():
 
 print(answer1())
 
-def is_in(word1, word2):
+def is_contained_in(word1, word2):
     count = 0
     for c in word1:
         if c in word2:
@@ -47,7 +47,7 @@ def answer2():
                 elif len(signal) == 4:
                     current_output += '4'
                 elif len(signal) == 5:
-                    if is_in(seven, signal):
+                    if is_contained_in(seven, signal):
                         current_output += '3'
                     else:
                         diff_4_1 = ''
@@ -55,15 +55,15 @@ def answer2():
                             if c not in one:
                                 diff_4_1 += c
 
-                        if is_in(diff_4_1, signal):
+                        if is_contained_in(diff_4_1, signal):
                             current_output += '5'
                         else:
                             current_output += '2'
                 elif len(signal) == 6:
-                    if is_in(four, signal):
+                    if is_contained_in(four, signal):
                         current_output += '9'
                     else:
-                        if is_in(one, signal):
+                        if is_contained_in(one, signal):
                             current_output += '0'
                         else:
                             current_output += '6'

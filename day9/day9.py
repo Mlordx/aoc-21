@@ -26,15 +26,15 @@ def basin_size(x, y):
     keys = [(x,y)]
 
     sequence = []
-    seen = defaultdict(bool)
+    seen = set()
 
     while len(keys) > 0:
         key = keys.pop()
 
-        if key not in depths or seen[key]:
+        if key not in depths or key in seen:
             continue
 
-        seen[key] = True
+        seen.add(key)
         size += 1
 
         sequence.append(depths[key])

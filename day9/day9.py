@@ -25,7 +25,6 @@ def basin_size(x, y):
     size = 0
     keys = [(x,y)]
 
-    sequence = []
     seen = set()
 
     while len(keys) > 0:
@@ -36,8 +35,6 @@ def basin_size(x, y):
 
         seen.add(key)
         size += 1
-
-        sequence.append(depths[key])
 
         adjacent_keys = [
             (key[0]+1, key[1]),

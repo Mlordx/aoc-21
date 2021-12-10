@@ -23,7 +23,7 @@ complement = {
 
 def first_corrupted_character(i):
     chunk = []
-    opening = set(list('[{<('))
+    opening = set('[{<(')
     for c in lines[i]:
         if c in opening:
             chunk.append(c)
@@ -37,7 +37,7 @@ def first_corrupted_character(i):
 
 def line_completion_score(i):
     chunk = []
-    opening = set(list('[{<('))
+    opening = set('[{<(')
     completion_value = {
         ')': 1,
         ']': 2,

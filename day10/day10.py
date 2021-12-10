@@ -1,13 +1,10 @@
 import sys
-from collections import defaultdict, Counter
 
 input_file = sys.argv[1] if len(sys.argv) > 1 else 'input.txt'
 
-character_count_per_line = []
 lines = []
 with open(input_file, 'r') as file:
     for line in file:
-        character_count_per_line.append(Counter(list(line.split()[0])))
         lines.append(line.split()[0])
 
 complement = {

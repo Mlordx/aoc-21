@@ -47,9 +47,8 @@ def answer1():
                         if energy[(x+i, y+j)] > 9:
                             octopi.appendleft((x+i, y+j))
 
-        for key in energy:
-            if energy[key] > 9:
-                energy[key] = 0
+        for key in flashed:
+            energy[key] = 0
 
         total_flashes += flashes
 

@@ -10,7 +10,7 @@ energy = defaultdict(int)
 def reset_input():
     with open(input_file, 'r') as file:
         for i, line in enumerate(file):
-            line_values = [int(x) for x in line.split()[0]]
+            line_values = [int(x) for x in line.strip()]
             for j, value in enumerate(line_values):
                 energy[(i, j)] = value
 

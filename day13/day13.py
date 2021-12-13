@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 import sys
 
 input_file = sys.argv[1] if len(sys.argv) > 1 else 'input.txt'
-SIZE = 1500
-paper = [[0 for _ in range(1500)] for _ in range(1500)]
+SIZE = 1311
+paper = [[0 for _ in range(SIZE)] for _ in range(SIZE)]
 instructions = []
 
 with open(input_file, 'r') as file:
@@ -59,9 +61,9 @@ def answer2():
     for i in range(SIZE):
         for j in range(SIZE):
             if paper[i][j] != 0:
-                paper[i][j] = '#'
+                paper[i][j] = '██'
             else:
-                paper[i][j] = ' '
+                paper[i][j] = '  '
 
     for i in range(7):
         line = ''

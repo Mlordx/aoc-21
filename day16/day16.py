@@ -1,4 +1,6 @@
+#!/usr/bin/python3
 import sys
+from math import prod
 
 input_file = sys.argv[1] if len(sys.argv) > 1 else 'input.txt'
 
@@ -20,14 +22,6 @@ hex_to_bin = {
     'E': '1110',
     'F': '1111',
 }
-
-
-def prod(numbers):
-    res = 1
-    for n in numbers:
-        res *= n
-    return res
-
 
 ops = {
     '000': sum,

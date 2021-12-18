@@ -39,7 +39,6 @@ ops = {
     '111': lambda a, b: 1 if a == b else 0,
 }
 
-
 packet = ''
 with open(input_file, 'r') as file:
     for line in file:
@@ -107,24 +106,21 @@ def process():
     while len(operations) > 0:
         current = operations.pop()
 
-        if type(current) == int:
-            answer.append(current)
-        else:
-            if current == ')':
-                answer.append(current)
+        if current in ops.keys():
+            if int(current, 2) in range(5, 8):
+                a, b = answer.pop(), answer.pop()
+                answer.pop()
+                answer.append(ops[current](a, b))
             else:
-                if int(current, 2) in range(5, 8):
-                    a, b = answer.pop(), answer.pop()
-                    answer.pop()
-                    answer.append(ops[current](a, b))
-                else:
-                    numbers = []
+                numbers = []
+                x = answer.pop()
+                while x != ')':
+                    numbers.append(x)
                     x = answer.pop()
-                    while x != ')':
-                        numbers.append(x)
-                        x = answer.pop()
 
-                    answer.append(ops[current](numbers))
+                answer.append(ops[current](numbers))
+        else:
+            answer.append(current)
 
     return answer[0]
 

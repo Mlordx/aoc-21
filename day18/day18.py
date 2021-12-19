@@ -94,10 +94,8 @@ def add(line1, line2):
     new_line = '[' + line1 + ',' + line2 + ']'
 
     current_line = new_line
-    count = 0
     while needs_fixing(current_line):
         current_line = fix_line(current_line)
-        count += 1
 
     return current_line
 
@@ -108,7 +106,6 @@ def evaluate(line):
 
 def answer1():
     final = reduce(add, snailfish_numbers)
-    print(final)
     return evaluate(final)
 
 

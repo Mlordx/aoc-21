@@ -79,7 +79,6 @@ def answer1():
                         if (i, j, k) in turned_on:
                             turned_on.remove((i, j, k))
 
-    print()
     return len(turned_on)
 
 
